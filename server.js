@@ -8,6 +8,13 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// ✅ Secure CORS Configuration
+const corsOptions = {
+  origin: "https://smartspend-n03p69uqw-aayushs-projects-ff088a72.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+};
+
 // ✅ Middleware FIRST
 app.use(cors());
 app.use(express.json());
